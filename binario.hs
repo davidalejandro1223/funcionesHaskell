@@ -1,2 +1,4 @@
-decimal:: Int->Int->Int
-decimal a b = mod a b
+
+residuo:: Int->Int
+residuo a = if a == 0 then 1
+	else a * residuo (a-1)
