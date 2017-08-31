@@ -1,4 +1,3 @@
 
-residuo:: Int->Int
-residuo a = if a == 0 then 1
-	else a * residuo (a-1)
+binaDeci:: Int->Int
+binaDeci a = if (div a 2) == 1 then 1 else binaDeci(mod a 2)
