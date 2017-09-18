@@ -16,3 +16,16 @@ division::Int->Int->Int
 division 0 b = 0
 division a 0 = 0
 division a b = if (a<b) then 0 else cuenta a b 1
+
+ultDig::Int->Int 
+ultDig a | a<10 = a
+		 | otherwise = (ultDig (div a 10))*10
+
+priDig::Int->Int
+priDig a | a<10  = a
+		 |otherwise = (priDig (div a 10))
+ 
+
+palindromo::Int->Bool
+palindromo a = if a<10 then True else if mod a 10 == priDig a then palindromo (div (a-(ultDig a)) 10) else False
+
